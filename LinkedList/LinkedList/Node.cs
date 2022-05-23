@@ -84,7 +84,17 @@ namespace LinkedList
             this.head = this.head.next;
             Display();
         }
-        
+        public void PopLast()
+        {
+            Node temp = this.head;
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = null;
+            Console.WriteLine("After deleting last element ");
+            Display();
+        }
         public void Display()
         {
             Node temp = head;
