@@ -35,6 +35,19 @@ namespace LinkedList
                 temp.next = node;
             }
         }
+        public void InsertFirst(int data)
+        {
+            Node Node = new Node(data);
+            if (this.head == null)
+            {
+                head = Node;
+            }
+            else
+            {
+                Node.next = head;
+                head = Node;
+            }
+        }
 
         public void Display()
         {
