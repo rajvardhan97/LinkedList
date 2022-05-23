@@ -126,5 +126,31 @@ namespace LinkedList
             Console.WriteLine("\nCould not find value in Linked List!");
             return default;
         }
+        public int InsertAtPosition(int search, int data)
+        {
+            Node temp = SearchPosition(search);
+            Node Node = new Node(data);
+            Node.next = temp.next;
+            temp.next = Node;
+            Display();
+            return (Node.data);
+        }
+        public Node SearchPosition(int data)
+        {
+            Node temp = this.head;
+            int count = 1;
+            while (temp != null)
+            {
+                if (temp.data == data)
+                {
+                    Console.WriteLine("\nFound {0} at {1} position\n", temp.data, count);
+                    return temp;
+                }
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine("\nElement not find value in Linked List");
+            return default;
+        }
     }
 }
