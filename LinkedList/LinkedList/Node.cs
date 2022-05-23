@@ -90,9 +90,10 @@ namespace LinkedList
             while (temp.next.next != null)
             {
                 temp = temp.next;
+                Console.WriteLine("After deleting {0}", temp.next.data);
             }
             temp.next = null;
-            Console.WriteLine("After deleting last element ");
+            
             Display();
         }
         public void Display()
@@ -107,6 +108,23 @@ namespace LinkedList
                 Console.WriteLine(temp.data + " ");
                 temp = temp.next;
             }
+        }
+        public int Search(int data)
+        {
+            Node temp = this.head;
+            int count = 1;
+            while(temp != null)
+            {
+                if(temp.data == data)
+                {
+                    Console.WriteLine("\nFound {0} at {1} position", temp.data, count);
+                    return temp.data;
+                }
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine("\nCould not find value in Linked List!");
+            return default;
         }
     }
 }
