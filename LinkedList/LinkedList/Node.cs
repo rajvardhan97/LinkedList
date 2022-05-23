@@ -78,6 +78,13 @@ namespace LinkedList
 
             }
         }
+        public void Pop()
+        {
+            Console.WriteLine("Poped element is: {0}", head.data);
+            this.head = this.head.next;
+            Display();
+        }
+        
         public void Display()
         {
             Node temp = head;

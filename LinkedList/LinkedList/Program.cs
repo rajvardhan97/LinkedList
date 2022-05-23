@@ -13,7 +13,8 @@ namespace LinkedList
         {
             List linkedlist = new List();
             Console.WriteLine("Enter a choice to perform Linked List Operation:\n");
-            Console.WriteLine("1. Add elements\n2. Append element after an element");
+            Console.WriteLine("1. Add elements\n2. Append element after an element\n3. Insert an element in between\n" +
+                "4. Delete first element\n");
             int n = Convert.ToInt32(Console.ReadLine());
             switch (n)
             {
@@ -36,6 +37,17 @@ namespace LinkedList
                     Console.WriteLine("After adding in between\n");
                     linkedlist.InsertInBetween(2, 30);
                     linkedlist.Display();
+                    break;
+                case 4:
+                    linkedlist.Add(56);
+                    linkedlist.Add(30);
+                    linkedlist.Add(70);
+                    linkedlist.Display();
+                    linkedlist.Pop();
+                    break;
+                
+                default:
+                    Console.WriteLine("Invalid Input");
                     break;
             }
         }
