@@ -14,7 +14,7 @@ namespace LinkedList
             Console.WriteLine("Enter a choice to perform Linked List Operation:\n");
             Console.WriteLine("1. Add elements\n2. Append element after an element\n3. Insert an element in between\n" +
                 "4. Delete first element\n5. Delete last element\n6. Search an element\n7. Insert after a specific element\n" +
-                "8. Delete an element and show size\n");
+                "8. Delete an element and show size\n9. Display Linked List in ascending order\n");
                 int n = Convert.ToInt32(Console.ReadLine());
                 switch (n)
                 {
@@ -77,6 +77,13 @@ namespace LinkedList
                         linkedlist.DeleteNode(location);
                         linkedlist.Display();
                         linkedlist.Size();
+                        break;
+                    case 9:
+                        linkedlist.AddSort(56);
+                        linkedlist.AddSort(30);
+                        linkedlist.AddSort(40);
+                        linkedlist.AddSort(70);
+                        linkedlist.Display();
                         break;
                     default:
                         Console.WriteLine("Invalid Input");

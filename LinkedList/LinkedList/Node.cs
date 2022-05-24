@@ -196,5 +196,42 @@ namespace LinkedList
             }
             Console.WriteLine("Size of linked list is:" + count);
         }
+
+        public void Sorted(Node Node)
+        {
+            Node temp = head;
+            if (temp == null || head.data >= Node.data)
+            {
+                Node.next = head;
+                head = Node;
+            }
+            else if (head.next == null && head.data < Node.data)
+            {
+                head.next = Node;
+            }
+            else
+            {
+                if (temp.next.data > Node.data)
+                {
+                    Node.next = temp.next;
+                    temp.next = Node;
+                }
+                else
+                {
+                    while (temp.next != null && temp.next.data < Node.data)
+                    {
+                        temp = temp.next;
+                    }
+                    Node.next = temp.next;
+                    temp.next = Node;
+
+                }
+            }
+        }
+        public void AddSort(int data)
+        {
+            Node Node = new Node(data);
+            Sorted(Node);
+        }
     }
 }
