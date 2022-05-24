@@ -152,5 +152,49 @@ namespace LinkedList
             Console.WriteLine("\nElement not find value in Linked List");
             return default;
         }
+        public int SearchLocation(int value)
+        {
+            Node node = this.head;
+            int count = 0;
+            while (node != null)
+            {
+
+                if (node.data == value)
+                {
+                    return count;
+                }
+                node = node.next;
+                count++;
+            }
+            return count;
+        }
+
+        public void DeleteNode(int location)
+        {
+          
+            Node temp = this.head;
+            if (location == 0)
+            {
+                this.head = temp.next;
+            }
+            for (int i = 0; temp != null && i < location - 1; i++)
+            {
+                temp = temp.next;
+            }
+            Node next = temp.next.next;
+            temp.next = next;
+        }
+
+        public void Size()
+        {
+            Node temp = head;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            Console.WriteLine("Size of linked list is:" + count);
+        }
     }
 }
